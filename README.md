@@ -36,17 +36,35 @@ leveldb存储结构要根据不同的产品进行特定的方式存储，数据�
 
 |**No** |**变量** |**数据类型** |**字段描述** |
 | --------   | -----:   | :----: | :----: |
-|1 |parentHash |hash |前一个区块的区块头哈希值 |
-|2 |sha3Uncles |hash |叔块头以及部分区块体的哈希值 |
+|1 |parentHash |byte |前一个区块的区块头哈希值 |
+|2 |sha3Uncles |byte |叔块头以及部分区块体的哈希值 |
 |3 |miner |byte |主成成分2 |
-|4 |stateRoot |hash |世界状态树的根节点哈希值（在所有交易被执行后） |
-|5 |transactionsRoot |hash |交易树根节点的哈希值。这棵树包含了区块体的所有交易。 |
-|6 |receiptsRoot |hash |每当交易执行时，以太坊都会生成对应结果的交易收据。此处就是这个交易收据树的根节点哈希。 |
+|4 |stateRoot |byte |世界状态树的根节点哈希值（在所有交易被执行后） |
+|5 |transactionsRoot |byte |交易树根节点的哈希值。这棵树包含了区块体的所有交易。 |
+|6 |receiptsRoot |byte |每当交易执行时，以太坊都会生成对应结果的交易收据。此处就是这个交易收据树的根节点哈希。 |
 |7 |difficulty |uint64 |这是当前区块挖矿难度的度量值 |
 |8 |number |uint64 |前序区块的总数。也就是区块高度 |
 |9 |gasLimit |uint64 |gas limit 标示了该区块所记录的所有交易可以使用的 gas 总量 |
 |10 |gasUsed |uint64 |区块中各条交易所实际消耗的 gas 总量 |
 |11 |timestamp |uint64 |区块创建时的 Unix 时间戳。该值为1970年至该区块被打包时所经过的秒数 |
 |12 |extraData |byte |能输入任何东西的不定长字节数组。当矿工创建区块时，可以在这个区域添加任何东西 |
-|13 |mixHash |hash |用于验证一个区块是否被真正记录到链上的哈希值 |
+|13 |mixHash |byte |用于验证一个区块是否被真正记录到链上的哈希值 |
 |14 |nonce |uint64 |和 mixHash 一样，用于验证区块是否被真正记录到链上的值 |
+
+<br><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **Block Body 变量含义**<br>
+
+|**No** |**变量** |**数据类型** |**字段描述** |
+| --------   | -----:   | :----: | :----: |
+|1 |hash |byte |交易哈希值 |
+|2 |size |uint64 |交易数据占用内存值 |
+|3 |from |byte |交易发起方 |
+|4 |nonce |uint64 |此账户发出的交易序号数 |
+|5 |gasPrice |uint64 |执行此交易、进行计算时为每单位 gas 所支付的费用（以 Wei 计量） |
+|6 |gas |uint64 |执行此交易时可以使用的最大 gas 数量 |
+|7 |to |byte |交易接收方 |
+|8 |value |uint64 |交易总额 |
+|9 |input |byte |发送消息调用时附带的输入数据（可以理解为调用智能合约时执行的程序） |
+|10 |v |byte |在交易的密码学签名中用到的值，可以用于确定交易的发送方 |
+|11 |r |byte |在交易的密码学签名中用到的值，可以用于确定交易的发送方 |
+|12 |s |byte |在交易的密码学签名中用到的值，可以用于确定交易的发送方 |
