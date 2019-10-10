@@ -92,3 +92,13 @@ leveldb存储结构要根据不同的产品进行特定的方式存储，数据�
 [关于文件描述参考文章](https://uzshare.com/view/2025)
 
 <br>
+
+![one](level_3.png)
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-以太坊leveldb本地存储形态ancient文件夹-
+<br><br>
+**下面还是对每个文件进行解释**
+<br>
+- headers中存储的是每个区块的header
+- bodys中存储的是每个区块的body
+- receipts中存储的是每个区块交易树的计算因子（这里值得一提的是当geth更新到1.9.x之后，更改了部分数据结构的scheme，例如以前的receipt是存放在header中，现在可以在读取历史数据之后重新计算出来，这样一来省下了一大块的内存占用。）
+- FLOCK是锁定了当前数据库的标志文件
