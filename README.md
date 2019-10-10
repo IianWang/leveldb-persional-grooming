@@ -52,7 +52,7 @@ leveldb存储结构要根据不同的产品进行特定的方式存储，数据�
 |14 |nonce |uint64 |和 mixHash 一样，用于验证区块是否被真正记录到链上的值 |
 
 <br><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **Block Body 变量含义**<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **Block Body 变量含义**<br>
 
 |**No** |**变量** |**数据类型** |**字段描述** |
 | --------   | -----:   | :----: | :----: |
@@ -68,3 +68,12 @@ leveldb存储结构要根据不同的产品进行特定的方式存储，数据�
 |10 |v |byte |在交易的密码学签名中用到的值，可以用于确定交易的发送方 |
 |11 |r |byte |在交易的密码学签名中用到的值，可以用于确定交易的发送方 |
 |12 |s |byte |在交易的密码学签名中用到的值，可以用于确定交易的发送方 |
+
+<br><br>
+
+**以上就是"block header"与"block body"的全部数据变量，同步数据geth版本为1.9.2。**<br><br>
+
+## 以太坊数据文件描述
+<br>
+
+**简单介绍了以太坊存储形式及包含的变量，下面说说我们同步下来的leveldb数据是什么样子，以及leveldb的文件含义。**<br><br>
