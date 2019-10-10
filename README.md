@@ -18,6 +18,10 @@ leveldb存储结构要根据不同的产品进行特定的方式存储，数据�
 
 ## 以太坊存储与leveldb
 
-![one](leveldb_eth.png)
+**网上关于以太坊为什么选择leveldb作为底层数据库的理由的文章较少，所以我这里主要根据以太坊的数据状态进行推测，到目前为止以太坊一个有870多万个区块被广播在链上，而且还在以每天6000多个区块在增加，区块中的交易数据占据半数以上的比重。但每个区块中的交易数量不固定，几笔、十几笔、几十笔或者是零笔。所以做个大致估计，姑且认为平均每个块有十笔交易好了。这样一来交易总量就是近9000万笔交易数据。话说回来，体量庞大的数据需要一个非关系型数据库，因为需要压缩存储空间，同时需要满足高性能的写入，每天要写入6万笔交易信息啊。而且不需要对数据库进行经常性的读取，关于leveldb的构造细节及理念就不展开了。感兴趣的朋友可以点下面的链接。**<br>
+[LevelDB 的整体架构](https://mp.weixin.qq.com/s?__biz=MzI0MzQyMTYzOQ==&mid=2247484871&idx=1&sn=66366c97ba368cd7732855079863b9f9&chksm=e96c1d6fde1b94792f067bbd3b0c809742d2408fbf2d2f9bac3c21ee388ade1cd1000150deaf&mpshare=1&scene=1&srcid=0111cATS2EiuC750q0iPavUl&sharer_sharetime=1570678693721&sharer_shareid=d3390afaafb8cedb69afd614eff7f764&key=540c8d6698c698e010f9d95edc120c7087e6930ad5e2c541ede6a23227c9064a1847e4a20770605431f3a43a4c658efb5b6c6e5fe9d5e8d051105b544b3764320abd962f2f1c4c7f4bbdcf45d9126ccd&ascene=1&uin=MTAzNDAxNjIwMw%3D%3D&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=Tfl7M18Ixl8j6OagKw1MJScYtK4wSM%2BcVh2D5zrB86EwCPqkhkg8aGvOp4bMLNkC)
 
-**那么这个"层级"要怎样解释呢？如上图**
+
+![one](leveldb_eth.png)
+<br>  &emsp;&emsp;&emsp;-以太坊区块的抽象示意图-
+<br>**可以看到，"block header"与"block body"两者是分开存储的**
