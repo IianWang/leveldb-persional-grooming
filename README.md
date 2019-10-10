@@ -22,8 +22,9 @@ leveldb存储结构要根据不同的产品进行特定的方式存储，数据�
 [LevelDB 的整体架构](https://mp.weixin.qq.com/s?__biz=MzI0MzQyMTYzOQ==&mid=2247484871&idx=1&sn=66366c97ba368cd7732855079863b9f9&chksm=e96c1d6fde1b94792f067bbd3b0c809742d2408fbf2d2f9bac3c21ee388ade1cd1000150deaf&mpshare=1&scene=1&srcid=0111cATS2EiuC750q0iPavUl&sharer_sharetime=1570678693721&sharer_shareid=d3390afaafb8cedb69afd614eff7f764&key=540c8d6698c698e010f9d95edc120c7087e6930ad5e2c541ede6a23227c9064a1847e4a20770605431f3a43a4c658efb5b6c6e5fe9d5e8d051105b544b3764320abd962f2f1c4c7f4bbdcf45d9126ccd&ascene=1&uin=MTAzNDAxNjIwMw%3D%3D&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=Tfl7M18Ixl8j6OagKw1MJScYtK4wSM%2BcVh2D5zrB86EwCPqkhkg8aGvOp4bMLNkC)
 
 **现在再来说说区块中除了交易数据还包含什么。**<br>
+
 ![one](leveldb_eth.png)
-<br>  &emsp;&emsp;&emsp;-以太坊区块的抽象示意图   [图片来源](https://ethfans.org/posts/ethereum-yellow-paper-walkthrough-2-merkle-tree-world-state-transaction-block)-<br>
+<br>  &emsp;&emsp;-以太坊区块的抽象示意图   [图片来源](https://ethfans.org/posts/ethereum-yellow-paper-walkthrough-2-merkle-tree-world-state-transaction-block)-<br>
 <br>
 <br>**可以看到，"block header"与"block body"两者是分开存储的，为什么要这么干，我个人认为是节省内存占用。至于为什么稍后我会和大家详细讲述。继续上面所说的，"block body"中包含"transcations"和"uncle blocks headers"。[这里有一篇关于叔块的解释](https://github.com/ethereum/wiki/wiki/Design-Rationale#uncle-incentivization )**<br>
 <br>**下面这张图片是更加精细的结构**<br>
