@@ -77,7 +77,7 @@ leveldb存储结构要根据不同的产品进行特定的方式存储，数据�
 <br>
 
 **简单介绍了以太坊存储形式及包含的变量，下面说说我们同步下来的leveldb数据是什么样子，以及leveldb的文件含义。**<br><br>
-![one](level_2.png)
+![one](level_4.png)
 <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-以太坊leveldb本地存储形态-
 <br><br>
 **下面对每个文件进行解释**
