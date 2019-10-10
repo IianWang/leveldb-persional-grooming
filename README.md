@@ -28,3 +28,4 @@ leveldb存储结构要根据不同的产品进行特定的方式存储，数据�
 <br>**可以看到，"block header"与"block body"两者是分开存储的，为什么要这么干，我个人认为是节省内存占用。至于为什么稍后我会和大家详细讲述。继续上面所说的，"block body"中包含"transcations"和"uncle blocks headers"。[这里有一篇关于叔块的解释](https://github.com/ethereum/wiki/wiki/Design-Rationale#uncle-incentivization )**<br>
 <br>**下面这张图片是更加精细的结构**<br>
 ![one](ldb_eth_final.png)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-区块、交易、账户状态对象以及以太坊的默克尔树 [图片来源](https://ethfans.org/posts/ethereum-yellow-paper-walkthrough-2-merkle-tree-world-state-transaction-block)-
