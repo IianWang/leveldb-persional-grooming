@@ -77,6 +77,14 @@ leveldb存储结构要根据不同的产品进行特定的方式存储，数据�
 <br>
 
 **简单介绍了以太坊存储形式及包含的变量，下面说说我们同步下来的leveldb数据是什么样子，以及leveldb的文件含义。**<br><br>
-![one](level_2.png)
-
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-以太坊leveldb本地存储形态-
+![one](level_1.png)
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-以太坊leveldb本地存储形态-
+<br><br>
+**下面对每个文件进行解释**
+<br>
+- 000001.log是当前的数据库交易的预写日志。
+- CURRENT是一个指针，指向最后一个数据库文件（这种顺序读写最后一个的特性和区块链的非常契合）
+- LOCK是锁定了当前数据库的标志文件
+- LOG是全局日志，供维护人员参阅
+- MANIFEST-[0-9]+ // 描述文件。只有CURRENT指向的当前文件才是有效的
+- db/[0-9]+.ldb // dbtable文件,后台进程会周期性将陈旧的内容写入ldb文件
