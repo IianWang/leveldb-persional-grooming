@@ -52,7 +52,7 @@ leveldb存储结构要根据不同的产品进行特定的方式存储，数据�
 |14 |nonce |uint64 |和 mixHash 一样，用于验证区块是否被真正记录到链上的值 |
 
 <br><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **Block Body 变量含义**<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **Block Body 变量含义**<br>
 
 |**No** |**变量** |**数据类型** |**字段描述** |
 | --------   | -----:   | :----: | :----: |
