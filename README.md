@@ -30,7 +30,8 @@ Leveldb存储结构要根据不同的产品进行特定的方式存储，数据�
 <br>**下面这张图片是更加精细的结构**<br>
 ![one](ldb_eth_final.png)
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-区块、交易、账户状态对象以及以太坊的默克尔树 [图片来源以太坊黄皮书](https://www.lucassaldanha.com/ethereum-yellow-paper-walkthrough-2/)-<br><br>
-[什么是默克尔树](https://zhuanlan.zhihu.com/p/39271872 )
+[默克尔树--知乎](https://zhuanlan.zhihu.com/p/39271872 )<br>
+[默克尔树--黄皮书](https://www.lucassaldanha.com/ethereum-yellow-paper-walkthrough-2/ )
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **Block Header 变量含义**<br>
 
